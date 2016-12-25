@@ -1,6 +1,6 @@
 package com.caseykulm.primality;
 
-import static com.caseykulm.Utils.isDivisibleWhole;
+import static com.caseykulm.MathUtils.isNaturalDivisor;
 
 /**
  * https://en.wikipedia.org/wiki/Primality_test#Simple_methods
@@ -17,7 +17,7 @@ public class SimplePrimality implements PrimalityStrategy {
       return false;
     } else {
       for (int i=3; i<=Math.sqrt(checkInt); i+=2) {
-        if (isDivisibleWhole(checkInt, i)) {
+        if (isNaturalDivisor(checkInt, i)) {
           return false;
         }
       }

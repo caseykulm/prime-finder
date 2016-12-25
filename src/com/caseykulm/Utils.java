@@ -13,22 +13,6 @@ public class Utils {
     System.out.println("minutes to find:\t" + minutesToFind);
   }
 
-  /**
-   * If returns true then the number is not prime because
-   * some number other than 1 and itself is divisible wholly
-   *
-   * @param checkInt checking if this is prime
-   * @param otherInt in the range of 2 to (checkInt-1)
-   * @return true if checkInt / otherInt is a whole number
-   */
-  public static boolean isDivisibleWhole(int checkInt, int otherInt) {
-    double checkDouble = 1.0 * checkInt;
-    double resultDouble = checkDouble / otherInt;
-    int intResult = checkInt / otherInt;
-    double finalResult = resultDouble - intResult;
-    return finalResult == 0;
-  }
-
   public static void basicPrintPrimesToLimit(PrimalityStrategy strategy, int limit) {
     for (int i=1; i<=limit; i++) {
       if (strategy.isPrime(i)) {

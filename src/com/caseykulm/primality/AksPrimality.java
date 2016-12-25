@@ -1,5 +1,9 @@
 package com.caseykulm.primality;
 
+import com.caseykulm.MathUtils;
+
+import static com.caseykulm.MathUtils.isPerfectPower;
+
 /**
  * https://en.wikipedia.org/wiki/AKS_primality_test
  */
@@ -43,9 +47,4 @@ public class AksPrimality implements PrimalityStrategy {
      */
     return true;
   }
-
-  private boolean isPerfectPower(int checkInt) {
-    return false;
-  }
-
 }
