@@ -30,43 +30,7 @@ https://docs.google.com/spreadsheets/d/1POv59qWYwPUbKQqnyV46yelLRFuxcJjXjw7V35h-
 
 ![Simple Graph][image_simple_graph]
 
-primes <= 1,000  
-millis to find:		4.0  
-seconds to find:	0.004  
-minutes to find:	6.666667E-5  
-
-primes <= 10,000  
-millis to find:		16.0  
-seconds to find:	0.016  
-minutes to find:	2.6666667E-4
-
-primes <= 100,000  
-millis to find:		51.0  
-seconds to find:	0.051  
-minutes to find:	8.5E-4  
-
-primes <= 1,000,000  
-millis to find:		445.0  
-seconds to find:	0.445  
-minutes to find:	0.0074166665  
-
-primes <= 10,000,000  
-millis to find:		8530.0  
-seconds to find:	8.53  
-minutes to find:	0.14216666  
-
-primes <= 100,000,000  
-millis to find:		204895.0  
-seconds to find:	204.895  
-minutes to find:	3.4149168  
-
 ### AksPrimality
-
-primes <= 1,000
-
-primes <= 1,000,000
-
-primes <= 100,000,000
 
 
 ## TODO
