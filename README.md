@@ -69,5 +69,5 @@ primes <= 100,000,000
 * Add unit tests to validate against http://primes.utm.edu/lists/small/millions/
 * Add log-graphs for time tests
 * Add implementation for AksPrimality as well as run times
-* Add notes about what limit each of these tests primality methods start
+* Add notes about what limit each of these primality methods start
  inevitably failing due to accuracy errors, memory limits, etc.
