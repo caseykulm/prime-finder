@@ -25,6 +25,8 @@ RAM: 16384MiB
 
 ### SimplePrimality
 
+![Simple Graph][image_simple_graph]
+
 primes <= 1,000  
 millis to find:		4.0  
 seconds to find:	0.004  
@@ -71,3 +73,5 @@ primes <= 100,000,000
 * Add implementation for AksPrimality as well as run times
 * Add notes about what limit each of these primality methods start
  inevitably failing due to accuracy errors, memory limits, etc.
+
+[image_simple_graph]: ./images/simple_graph.png "Simple Graph"
