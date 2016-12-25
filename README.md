@@ -16,45 +16,44 @@ was very important theoretically, but is not the go to fast primality test used 
 
 ## Time Tests
 
-Hardware specs
-OS: 64bit Mac OS X 10.11.6 15G31
-Kernel: x86_64 Darwin 15.6.0
-CPU: Intel Core i7-4870HQ CPU @ 2.50GHz
-GPU: AMD Radeon R9 M370X / Intel Iris Pro
-RAM: 16384MiB
-103,030,637
+Hardware specs  
+OS: 64bit Mac OS X 10.11.6 15G31  
+Kernel: x86_64 Darwin 15.6.0  
+CPU: Intel Core i7-4870HQ CPU @ 2.50GHz  
+GPU: AMD Radeon R9 M370X / Intel Iris Pro  
+RAM: 16384MiB 
 
 ### SimplePrimality
 
-primes <= 1,000
-millis to find:		4.0
-seconds to find:	0.004
-minutes to find:	6.666667E-5
+primes <= 1,000  
+millis to find:		4.0  
+seconds to find:	0.004  
+minutes to find:	6.666667E-5  
 
-primes <= 10,000
-millis to find:		16.0
-seconds to find:	0.016
+primes <= 10,000  
+millis to find:		16.0  
+seconds to find:	0.016  
 minutes to find:	2.6666667E-4
 
-primes <= 100,000
-millis to find:		51.0
-seconds to find:	0.051
-minutes to find:	8.5E-4
+primes <= 100,000  
+millis to find:		51.0  
+seconds to find:	0.051  
+minutes to find:	8.5E-4  
 
-primes <= 1,000,000
-millis to find:		445.0
-seconds to find:	0.445
-minutes to find:	0.0074166665
+primes <= 1,000,000  
+millis to find:		445.0  
+seconds to find:	0.445  
+minutes to find:	0.0074166665  
 
-primes <= 10,000,000
-millis to find:		8530.0
-seconds to find:	8.53
-minutes to find:	0.14216666
+primes <= 10,000,000  
+millis to find:		8530.0  
+seconds to find:	8.53  
+minutes to find:	0.14216666  
 
-primes <= 100,000,000
-millis to find:		204895.0
-seconds to find:	204.895
-minutes to find:	3.4149168
+primes <= 100,000,000  
+millis to find:		204895.0  
+seconds to find:	204.895  
+minutes to find:	3.4149168  
 
 ### AksPrimality
 
