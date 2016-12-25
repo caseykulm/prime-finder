@@ -22,10 +22,10 @@ public class Utils {
    * @return true if checkInt / otherInt is a whole number
    */
   public static boolean isDivisibleWhole(int checkInt, int otherInt) {
-    float checkFloat = 1.0f * checkInt;
-    float resultFloat = checkFloat / otherInt;
+    double checkDouble = 1.0 * checkInt;
+    double resultDouble = checkDouble / otherInt;
     int intResult = checkInt / otherInt;
-    float finalResult = resultFloat - intResult;
+    double finalResult = resultDouble - intResult;
     return finalResult == 0;
   }
 
