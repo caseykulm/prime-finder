@@ -23,6 +23,9 @@ CPU: Intel Core i7-4870HQ CPU @ 2.50GHz
 GPU: AMD Radeon R9 M370X / Intel Iris Pro  
 RAM: 16384MiB 
 
+Link to Google Drive Sheets document tracking below stats, 
+https://docs.google.com/spreadsheets/d/1POv59qWYwPUbKQqnyV46yelLRFuxcJjXjw7V35h-wuA/edit?usp=sharing
+
 ### SimplePrimality
 
 ![Simple Graph][image_simple_graph]
