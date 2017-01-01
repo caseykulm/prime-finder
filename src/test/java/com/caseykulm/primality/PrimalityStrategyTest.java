@@ -10,6 +10,8 @@ import static org.junit.Assert.assertEquals;
 public abstract class PrimalityStrategyTest {
 
   private static final String FIRST_MILLION_PRIMES_FILE = "src/test/resources/primes_first_million.json";
+  private static final int FIRST_PRIME = 2;
+  private static final int MILLIONTH_PRIME = 15485863;
   private static PrimeList firstMillionPrimes;
 
   @BeforeClass
@@ -25,9 +27,11 @@ public abstract class PrimalityStrategyTest {
 
   protected void compareToFirstMillionPrimes(PrimalityStrategy primalityStrategy) {
     int numPrimesSeen = 0;
-    for (int checkNum=2; checkNum<=15485863; checkNum++) {
-      if (primalityStrategy.isPrime(checkNum)) {
-        assertEquals(firstMillionPrimes.primes.get(numPrimesSeen), new Integer(checkNum));
+    for (int potentialPrime=FIRST_PRIME; potentialPrime<=MILLIONTH_PRIME; potentialPrime++) {
+      if (primalityStrategy.isPrime(potentialPrime)) {
+        int expectedNextPrime = firstMillionPrimes.primes.get(numPrimesSeen);
+        int reportedNextPrime = potentialPrime;
+        assertEquals(expectedNextPrime, reportedNextPrime);
         numPrimesSeen++;
       }
     }

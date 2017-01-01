@@ -12,7 +12,7 @@ public class AksPrimality implements PrimalityStrategy {
   public boolean isPrime(int checkInt) {
     /**
      * Step 1: Check if n is a perfect power:
-     * if n = ab for integers a > 1 and b > 1,
+     * if n = a^b for integers a > 1 and b > 1,
      * output composite.
      */
     if (isPerfectPower(checkInt)) {
