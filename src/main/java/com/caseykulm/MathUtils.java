@@ -11,9 +11,8 @@ public class MathUtils {
    */
   public static boolean isNaturalDivisor(double checkNum, double otherNum) {
     double result = checkNum / otherNum;
-    int intResult = (int) (checkNum / otherNum);
-    double finalResult = result - intResult;
-    return finalResult == 0;
+    double fractionBit = result % 1;
+    return fractionBit == 0;
   }
 
   /**

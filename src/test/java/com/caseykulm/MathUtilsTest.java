@@ -17,6 +17,7 @@ public class MathUtilsTest {
     assertTrue(MathUtils.isNaturalDivisor(4, 2));
     assertTrue(MathUtils.isNaturalDivisor(6, 3));
     assertTrue(MathUtils.isNaturalDivisor(333, 111));
+    assertTrue(MathUtils.isNaturalDivisor(2199023255552d, 1));
 
     assertFalse(MathUtils.isNaturalDivisor(3, 2));
     assertFalse(MathUtils.isNaturalDivisor(13, 8));
@@ -64,6 +65,20 @@ public class MathUtilsTest {
         5789594d, 49211549d, 98423098d
     ));
     testGetDivisors(98423098, expectedDivisors98423098);
+
+    List<Double> expectedDivisors2199023255552 = new LinkedList<>(Arrays.asList(
+        1d, 2d, 4d, 8d, 16d, 32d, 64d, 128d, 256d,
+        512d, 1024d, 2048d, 4096d, 8192d, 16384d,
+        32768d, 65536d, 131072d, 262144d, 524288d,
+        1048576d, 2097152d, 4194304d, 8388608d,
+        16777216d, 33554432d, 67108864d, 134217728d,
+        268435456d, 536870912d, 1073741824d,
+        2147483648d, 4294967296d, 8589934592d,
+        17179869184d, 34359738368d, 68719476736d,
+        137438953472d, 274877906944d, 549755813888d,
+        1099511627776d, 2199023255552d
+    ));
+    testGetDivisors(2199023255552d, expectedDivisors2199023255552);
   }
 
   private void testGetDivisors(double checkNum, List<Double> expectedDivisors) {
