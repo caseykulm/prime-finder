@@ -1,5 +1,6 @@
-package com.caseykulm.primality;
+package com.caseykulm.primality.deterministic;
 
+import com.caseykulm.primality.PrimalityStrategyTest;
 import org.junit.Test;
 
 public class SimplePrimalityTest extends PrimalityStrategyTest {
@@ -7,7 +8,7 @@ public class SimplePrimalityTest extends PrimalityStrategyTest {
   @Test
   public void isPrime() {
     SimplePrimality simplePrimality = new SimplePrimality();
-    compareToFirstMillionPrimes(simplePrimality);
+    compareToFirstMillionPrimesDeterministic(simplePrimality);
   }
 
 }

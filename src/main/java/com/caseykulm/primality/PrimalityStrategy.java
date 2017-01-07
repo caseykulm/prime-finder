@@ -1,5 +1,7 @@
 package com.caseykulm.primality;
 
+import java.math.BigInteger;
+
 /**
  * Interface following strategy pattern:
  * https://sourcemaking.com/design_patterns/strategy
@@ -11,5 +13,5 @@ public interface PrimalityStrategy {
    * @param checkInt Number to analyze
    * @return true if prime, false if composite
    */
-  boolean isPrime(int checkInt);
+  boolean isPrime(BigInteger checkInt);
 }

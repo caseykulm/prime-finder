@@ -1,5 +1,8 @@
 package com.caseykulm;
 
+import com.google.common.math.BigIntegerMath;
+import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,10 +12,8 @@ public class MathUtils {
    * @param otherNum Other natural number
    * @return true if checkNum / otherNum is a natural number
    */
-  public static boolean isNaturalDivisor(double checkNum, double otherNum) {
-    double result = checkNum / otherNum;
-    double fractionBit = result % 1;
-    return fractionBit == 0;
+  public static boolean isNaturalDivisor(BigInteger checkNum, BigInteger otherNum) {
+    return checkNum.remainder(otherNum).equals(BigInteger.ZERO);
   }
 
   /**
@@ -21,36 +22,43 @@ public class MathUtils {
    * @param checkNum
    * @return true if there exist natural numbers m > 1, and k > 1 such that m^k = n
    */
-  public static boolean isPerfectPower(double checkNum) {
-    double exponentLimit = Math.log10(checkNum) / Math.log10(2);
-    double baseLimit = Math.sqrt(checkNum);
-    List<Double> divisors = getDivisors(checkNum);
-    for (double m = 2; m <= baseLimit; m++) {
-      for (double k = 0; k < divisors.size(); k++) {
-        if (k > exponentLimit) {
+  public static boolean
+  isPerfectPower(BigInteger checkNum) {
+    int exponentLimit = BigIntegerMath.log2(checkNum, RoundingMode.FLOOR);
+    BigInteger baseLimit = BigIntegerMath.sqrt(checkNum, RoundingMode.FLOOR);
+    List<BigInteger> divisors = getDivisors(checkNum);
+    BigInteger m = BigInteger.valueOf(2);
+    while (m.compareTo(baseLimit) <= 0) {
+      BigInteger k = BigInteger.ZERO;
+      while (k.compareTo(BigInteger.valueOf(divisors.size())) <= 0) {
+        if (k.compareTo(BigInteger.valueOf(exponentLimit)) > 0) {
           break; // move on to next value of m
         }
-        double n = Math.pow(m, k);
-        if (checkNum == n) {
+        BigInteger n = m.pow(k.intValue());
+        if (checkNum.compareTo(n) == 0) {
           return true;
         }
+        k = k.add(BigInteger.ONE);
       }
+      m = m.add(BigInteger.ONE);
     }
 
     return false;
   }
 
-  public static List<Double> getDivisors(double checkNum) {
-    List<Double> divisors = new LinkedList<>();
-    double sqrt = Math.sqrt(checkNum);
-    for (double potentialDivisor=1; potentialDivisor <= sqrt; potentialDivisor++) {
+  public static List<BigInteger> getDivisors(BigInteger checkNum) {
+    List<BigInteger> divisors = new LinkedList<>();
+    BigInteger sqrt = BigIntegerMath.sqrt(checkNum, RoundingMode.FLOOR);
+    BigInteger potentialDivisor = BigInteger.ONE;
+    while (potentialDivisor.compareTo(sqrt) <= 0) {
       if (isNaturalDivisor(checkNum, potentialDivisor)) {
         divisors.add(potentialDivisor);
-        if (potentialDivisor != sqrt) {
-          double otherDivisor = checkNum / potentialDivisor;
+        if (potentialDivisor.compareTo(sqrt) != 0) {
+          BigInteger otherDivisor = BigIntegerMath.divide(checkNum, potentialDivisor, RoundingMode.UNNECESSARY);
           divisors.add(otherDivisor);
         }
       }
+      potentialDivisor = potentialDivisor.add(BigInteger.ONE);
     }
     return divisors;
   }

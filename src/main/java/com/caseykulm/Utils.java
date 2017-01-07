@@ -1,6 +1,7 @@
 package com.caseykulm;
 
 import com.caseykulm.primality.PrimalityStrategy;
+import java.math.BigInteger;
 
 public class Utils {
 
@@ -13,11 +14,13 @@ public class Utils {
     System.out.println("minutes to find:\t" + minutesToFind);
   }
 
-  public static void basicPrintPrimesToLimit(PrimalityStrategy strategy, int limit) {
-    for (int i=1; i<=limit; i++) {
+  public static void basicPrintPrimesToLimit(PrimalityStrategy strategy, BigInteger limit) {
+    BigInteger i = BigInteger.ONE;
+    while (i.compareTo(limit) <= 0) {
       if (strategy.isPrime(i)) {
         System.out.println(i);
       }
+      i.add(BigInteger.ONE);
     }
   }
 }

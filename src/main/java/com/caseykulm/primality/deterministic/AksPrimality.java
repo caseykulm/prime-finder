@@ -1,6 +1,7 @@
-package com.caseykulm.primality;
+package com.caseykulm.primality.deterministic;
 
-import com.caseykulm.MathUtils;
+import com.caseykulm.primality.PrimalityStrategy;
+import java.math.BigInteger;
 
 import static com.caseykulm.MathUtils.isPerfectPower;
 
@@ -9,7 +10,7 @@ import static com.caseykulm.MathUtils.isPerfectPower;
  */
 public class AksPrimality implements PrimalityStrategy {
 
-  public boolean isPrime(int checkInt) {
+  public boolean isPrime(BigInteger checkInt) {
     /**
      * Step 1: Check if n is a perfect power:
      * if n = a^b for integers a > 1 and b > 1,
@@ -21,8 +22,15 @@ public class AksPrimality implements PrimalityStrategy {
 
     /**
      * Step 2: Find the smallest r such that
-     * ordr(n) > (log2 n)2. (if r and n are not
+     * ord_r(n) > (log2 n)2. (if r and n are not
      * coprime, then skip this r)
+     *
+     * n^k = 1 (mod r)
+     *
+     * k=1 to 10000
+     * if (n^k + 1) % r == 1
+     *   if (r and n are not co prime)
+     *     skip this r
      */
 
     /**
