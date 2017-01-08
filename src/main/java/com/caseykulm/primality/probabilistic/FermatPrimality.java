@@ -28,8 +28,15 @@ public class FermatPrimality implements PrimalityStrategy {
     BigInteger i = BigInteger.ZERO;
     while (i.compareTo(numTimesToCheck) < 0) {
       int random = 2 + die.nextInt(checkInt.subtract(BigInteger.valueOf(4)).intValue());
-      double littleFermat = Math.pow(random, (checkInt.subtract(BigInteger.ONE)).intValue());
-      if ((littleFermat % checkInt.intValue()) != 1) {
+      BigInteger timesToMultiply = checkInt.subtract(BigInteger.ONE);
+      BigInteger littleFermat = BigInteger.valueOf(random);
+      BigInteger j = BigInteger.ONE;
+      while (j.compareTo(timesToMultiply) < 0) {
+        littleFermat = littleFermat.multiply(BigInteger.valueOf(random)).mod(checkInt);
+        j = j.add(BigInteger.ONE);
+      }
+
+      if (littleFermat.mod(checkInt).compareTo(BigInteger.ONE) != 0) {
         return false; // definitely composite
       }
       i = i.add(BigInteger.ONE);

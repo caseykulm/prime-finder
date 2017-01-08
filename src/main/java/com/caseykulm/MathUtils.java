@@ -22,8 +22,7 @@ public class MathUtils {
    * @param checkNum
    * @return true if there exist natural numbers m > 1, and k > 1 such that m^k = n
    */
-  public static boolean
-  isPerfectPower(BigInteger checkNum) {
+  public static boolean isPerfectPower(BigInteger checkNum) {
     int exponentLimit = BigIntegerMath.log2(checkNum, RoundingMode.FLOOR);
     BigInteger baseLimit = BigIntegerMath.sqrt(checkNum, RoundingMode.FLOOR);
     List<BigInteger> divisors = getDivisors(checkNum);

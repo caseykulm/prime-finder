@@ -20,7 +20,7 @@ public class Utils {
       if (strategy.isPrime(i)) {
         System.out.println(i);
       }
-      i.add(BigInteger.ONE);
+      i = i.add(BigInteger.ONE);
     }
   }
 }

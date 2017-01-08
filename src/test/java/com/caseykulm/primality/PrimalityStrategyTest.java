@@ -50,7 +50,7 @@ public abstract class PrimalityStrategyTest {
     int incorrectCompositeCount = 0;
     BigInteger potentialPrime = BigInteger.valueOf(FIRST_PRIME);
     while (potentialPrime.compareTo(BigInteger.valueOf(MILLIONTH_PRIME)) <= 0) {
-      boolean actuallyIsPrime = firstMillionPrimes.primes.contains(potentialPrime);
+      boolean actuallyIsPrime = firstMillionPrimes.primes.contains(potentialPrime.intValue());
       boolean guessedPrime = primalityStrategy.isPrime(potentialPrime);
 
       if (guessedPrime && actuallyIsPrime) { // correct that it's prime
