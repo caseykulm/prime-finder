@@ -37,7 +37,7 @@ https://docs.google.com/spreadsheets/d/1POv59qWYwPUbKQqnyV46yelLRFuxcJjXjw7V35h-
 
 ### Fermat Primality
 
-![Fermat Graph][image_simple_graph]
+![Fermat Graph][image_fermat_graph]
 
 ## TODO
 
@@ -46,3 +46,4 @@ https://docs.google.com/spreadsheets/d/1POv59qWYwPUbKQqnyV46yelLRFuxcJjXjw7V35h-
  inevitably failing due to accuracy errors, memory limits, etc.
 
 [image_simple_graph]: ./images/simple_graph.png "Simple Graph"
+[image_fermat_graph]: ./images/fermat_graph.png "Fermat Graph"
