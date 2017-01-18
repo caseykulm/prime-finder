@@ -91,4 +91,17 @@ public class MathUtilsTest {
     assertEquals(expectedDivisors.size(), actualDivisors.size());
   }
 
+  @Test
+  public void modularExponentiation() {
+    BigInteger one = MathUtils.modularExponentiation(BigInteger.valueOf(24), BigInteger.valueOf(2), BigInteger.valueOf(13));
+    assertEquals(BigInteger.valueOf(4), one);
+
+    for (int i=0; i<10000000; i++) {
+      BigInteger three =
+          MathUtils.modularExponentiation(BigInteger.valueOf(94), BigInteger.valueOf(123456789),
+              BigInteger.valueOf(14));
+      assertEquals(BigInteger.valueOf(6), three);
+    }
+  }
+
 }

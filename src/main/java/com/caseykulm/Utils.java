@@ -18,7 +18,7 @@ public class Utils {
     BigInteger i = BigInteger.ONE;
     while (i.compareTo(limit) <= 0) {
       if (strategy.isPrime(i)) {
-        System.out.println(i);
+        //System.out.println(i);
       }
       i = i.add(BigInteger.ONE);
     }

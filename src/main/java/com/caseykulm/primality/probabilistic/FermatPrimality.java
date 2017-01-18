@@ -1,5 +1,6 @@
 package com.caseykulm.primality.probabilistic;
 
+import com.caseykulm.MathUtils;
 import com.caseykulm.primality.PrimalityStrategy;
 import com.google.common.math.BigIntegerMath;
 import java.math.BigInteger;
@@ -28,15 +29,10 @@ public class FermatPrimality implements PrimalityStrategy {
     BigInteger i = BigInteger.ZERO;
     while (i.compareTo(numTimesToCheck) < 0) {
       int random = 2 + die.nextInt(checkInt.subtract(BigInteger.valueOf(4)).intValue());
-      BigInteger timesToMultiply = checkInt.subtract(BigInteger.ONE);
-      BigInteger littleFermat = BigInteger.valueOf(random);
-      BigInteger j = BigInteger.ONE;
-      while (j.compareTo(timesToMultiply) < 0) {
-        littleFermat = littleFermat.multiply(BigInteger.valueOf(random)).mod(checkInt);
-        j = j.add(BigInteger.ONE);
-      }
+      BigInteger modularExponent = MathUtils.modularExponentiation(
+          BigInteger.valueOf(random), checkInt.subtract(BigInteger.ONE), checkInt);
 
-      if (littleFermat.mod(checkInt).compareTo(BigInteger.ONE) != 0) {
+      if (modularExponent.compareTo(BigInteger.ONE) != 0) {
         return false; // definitely composite
       }
       i = i.add(BigInteger.ONE);

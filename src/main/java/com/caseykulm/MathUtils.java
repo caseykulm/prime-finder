@@ -61,4 +61,32 @@ public class MathUtils {
     }
     return divisors;
   }
+
+  /**
+   * @param base
+   * @param exponent
+   * @param mod
+   * @return $base^$exponent mod $mod
+   */
+  public static BigInteger modularExponentiation(BigInteger base, BigInteger exponent, BigInteger mod) {
+    //return basicModExp(base, exponent, mod);
+    return guavaModExp(base, exponent, mod);
+  }
+
+  public static BigInteger basicModExp(BigInteger base, BigInteger exponent, BigInteger mod) {
+    BigInteger answer = base;
+    BigInteger timesToMultiply = exponent.subtract(BigInteger.ONE);
+    BigInteger count = BigInteger.ZERO;
+    while (count.compareTo(timesToMultiply) < 0) {
+      answer = answer.multiply(base).mod(mod);
+      count = count.add(BigInteger.ONE);
+    }
+    return answer;
+  }
+
+  public static BigInteger guavaModExp(BigInteger base, BigInteger exponent, BigInteger mod) {
+    return base.modPow(exponent, mod);
+  }
+
+
 }

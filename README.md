@@ -4,12 +4,17 @@ Fun project to test out different methods for finding prime numbers
 
 ## Implemented methods
 
-### SimplePrimality
+### Simple Primality
 
 Follows some of the ideas listed in https://en.wikipedia.org/wiki/Primality_test#Simple_methods 
 but simplifies the last step a bit.
 
-### AksPrimality
+### Fermat Primality
+
+Follows https://en.wikipedia.org/wiki/Fermat_primality_test which is a probabilistic test based off of 
+Fermat's little theorem.
+
+### AKS Primality
 
 Follows https://en.wikipedia.org/wiki/AKS_primality_test which is much more efficient, and
 was very important theoretically, but is not the go to fast primality test used these days.
@@ -26,18 +31,17 @@ RAM: 16384MiB
 Link to Google Drive Sheets document tracking below stats, 
 https://docs.google.com/spreadsheets/d/1POv59qWYwPUbKQqnyV46yelLRFuxcJjXjw7V35h-wuA/edit?usp=sharing
 
-### SimplePrimality
+### Simple Primality
 
 ![Simple Graph][image_simple_graph]
 
-### AksPrimality
+### Fermat Primality
 
+![Fermat Graph][image_simple_graph]
 
 ## TODO
 
-* Add unit tests to validate against http://primes.utm.edu/lists/small/millions/
-* Add log-graphs for time tests
-* Add implementation for AksPrimality as well as run times
+* Add implementation for AKS Primality
 * Add notes about what limit each of these primality methods start
  inevitably failing due to accuracy errors, memory limits, etc.
 

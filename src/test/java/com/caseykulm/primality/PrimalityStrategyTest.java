@@ -48,13 +48,24 @@ public abstract class PrimalityStrategyTest {
     int incorrectPrimeCount = 0;
     int correctCompositeCount = 0;
     int incorrectCompositeCount = 0;
-    BigInteger potentialPrime = BigInteger.valueOf(FIRST_PRIME);
+    BigInteger potentialPrime = BigInteger.valueOf(3);
     while (potentialPrime.compareTo(BigInteger.valueOf(MILLIONTH_PRIME)) <= 0) {
+      long start = System.currentTimeMillis();
+      boolean print = potentialPrime.mod(BigInteger.valueOf(100001)).compareTo(BigInteger.ZERO) == 0;
+      if (print) {
+        System.out.println(potentialPrime);
+      }
       boolean actuallyIsPrime = firstMillionPrimes.primes.contains(potentialPrime.intValue());
       boolean guessedPrime = primalityStrategy.isPrime(potentialPrime);
 
       if (guessedPrime && actuallyIsPrime) { // correct that it's prime
         correctPrimeCount++;
+      }
+
+      // half
+      long two = System.currentTimeMillis();
+      if (print) {
+        System.out.println("1 half time: " + (two - start));
       }
 
       if (guessedPrime && !actuallyIsPrime) { // incorrect that it's prime
@@ -70,7 +81,12 @@ public abstract class PrimalityStrategyTest {
       if (!guessedPrime && !actuallyIsPrime) { // correct that it's composite
         correctCompositeCount++;
       }
-      potentialPrime = potentialPrime.add(BigInteger.ONE);
+      potentialPrime = potentialPrime.add(BigInteger.valueOf(2));
+      // end
+      long end = System.currentTimeMillis();
+      if (print) {
+        System.out.println("2 half time: " + (end - two));
+      }
     }
 
     float correctPrimePercentage = (1f * correctPrimeCount) / 25 * 100;

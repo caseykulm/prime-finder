@@ -8,7 +8,7 @@ public class FermatPrimalityTest extends PrimalityStrategyTest {
 
   @Test
   public void isPrime() {
-    FermatPrimality fermatPrimality = new FermatPrimality(BigInteger.valueOf(1000));
+    FermatPrimality fermatPrimality = new FermatPrimality(BigInteger.valueOf(10));
     compareToFirstMillionPrimesProbabilistic(fermatPrimality);
   }
 }
